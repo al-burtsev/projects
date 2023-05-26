@@ -1,0 +1,135 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    background: #63005a;
+    font-family: sans-serif;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.btn-start {
+    padding: 30px 90px;
+    background: green;
+    color: #fff;
+    border: none;
+    font-size: 30px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.btn-start:hover {
+    box-shadow: 0px 0px 10px 2px black;
+}
+
+.btn-start:active {
+    box-shadow: inset 0px 0px 20px 2px rgba(3, 3, 3, 0.349);
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0;
+    padding: 10px 0 0 0;
+    list-style: none;
+    user-select: none;
+}
+
+.list-item {
+    position: relative;
+    width: 24%;
+    margin-bottom: 10px;
+    padding: 40px;
+    background: white;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+
+.list-item.open {
+    background: grey;
+}
+
+.list-item.success {
+    background: green;
+}
+
+.wrapper {
+    align-items: center;
+    padding: 50px;
+    background: #fff;
+}
+
+.wrapper-left {
+    margin-right: 50px;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 20%;
+    font-weight: 600;
+    background: lightsalmon;
+}
+
+.win-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.win-text {
+    color: black;
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+#gameField {
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+    padding-left: 5px;
+}
