@@ -2,7 +2,7 @@ let fieldDefaultVal;
 let items = [];
 let matchCounter = 0;
 
-const inputValidate = (value) => {
+const inputValidate = function(value) {
 
     if ((parseInt(value) % 2 === 0) && (parseInt(value) <= 10)) {
         fieldDefaultVal = parseInt(value);
@@ -13,7 +13,7 @@ const inputValidate = (value) => {
     return fieldDefaultVal
 }
 
-const initialGame = (container) => {
+const initialGame = function(container) {
     const gameWrapper = document.createElement('div');
     const gameTitle = document.createElement('h1');
     const gameDescr = document.createElement('p');
@@ -30,7 +30,7 @@ const initialGame = (container) => {
     const initGameField = document.createElement('input');
     const startBtn = document.createElement('button');
 
-    gameTitle.textContent = 'Welcome to "The Memory" game!'
+    gameTitle.textContent = 'Welcome to "The\u00A0Memory" game!'
     gameDescr.textContent = 'You should find pairs of cards on the plaing field. Try yourself!';
     lvlDescr.textContent = 'Choose 1 of 5 levels:';
     lvl1.textContent = 'Easiest — field size 2x2';
@@ -59,14 +59,14 @@ const initialGame = (container) => {
     container.append(gameWrapper);
 };
 
-const arrGen = (gameField = 4) => {
+const arrGen = function(gameField = 4) {
 
     for (i = 1; i <= (gameField ** 2) / 2; i++) {
         items.push(i, i);
     }
 };
 
-const arrShuffle = (arr) => {
+const arrShuffle = function(arr) {
     let i = arr.length;
     while (--i > 0) {
         let randIndex = Math.floor(Math.random() * (i + 1));
@@ -75,7 +75,7 @@ const arrShuffle = (arr) => {
     return arr;
 }
 
-const initialField = () => {
+const initialField = function() {
 
     const field = document.createElement('ul');
 
@@ -91,7 +91,7 @@ const initialField = () => {
     document.querySelector('.container').append(field);
 }
 
-const createResetBtn = () => {
+const createResetBtn = function() {
     const resetBtn = document.createElement('button');
     const winDisplay = document.createElement('div');
     const winText = document.createElement('p');
@@ -111,7 +111,7 @@ const createResetBtn = () => {
     }, 1500)
 }
 
-const newGame = () => {
+const newGame = function() {
     
     arrGen(inputValidate(document.getElementById('gameField').value));
     arrShuffle(items);
@@ -119,10 +119,6 @@ const newGame = () => {
 
     document.getElementById('start').style.display = 'none';
     document.querySelector('.wrapper').style.display = 'none';
-
-    console.log(document.getElementById('gameField').value);
-
-    console.log(gameField.value)
 
     let listItems = document.querySelectorAll('.list-item'),
         card = null,
@@ -174,15 +170,10 @@ const newGame = () => {
                 createResetBtn();
             }
         });
-
-        // console.log(matchCounter)
-        // console.log(listItems)
-        // console.log(gameField)
-        // console.log(gameField.value)
     });
 };
 
-const resetGame = () => {
+const resetGame = function() {
     document.getElementById('resetBtn').addEventListener('click', () => {
         document.querySelector('.win-block').remove();
         document.querySelector('.list').remove();
