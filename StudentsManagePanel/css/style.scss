@@ -1,0 +1,23 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.table-title {
+    cursor: pointer;
+}
+.error-label {
+    color: red;
+}
+
+.invalid {
+    border-color: red;
+}
+
+.valid {
+    border-color: green;
+}
+
+.table__tr-start {
+    padding: 25px;
+    opacity: .5;
+    font-weight: 600;
+    text-align: center;
+}
