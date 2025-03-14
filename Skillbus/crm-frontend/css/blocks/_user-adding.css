@@ -1,0 +1,51 @@
+.user-adding__container {
+    display: flex;
+    justify-content: center;
+}
+
+.user-adding__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 216px;
+    height: 44px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    transition: all .3s ease;
+}
+
+.user-adding__btn path {
+    transition: fill .3s ease;
+}
+
+@media(hover:hover) {
+    .user-adding__btn:hover {
+        background-color: var(--firm-hover);
+        color: var(--white);
+    }
+
+    .user-adding__btn:hover path {
+        fill: var(--white);
+    }
+}
+
+.user-adding__btn:focus,
+.user-adding__btn:active {
+    background-color: var(--firm-active);
+    color: var(--white);
+}
+
+.user-adding__btn:focus path,
+.user-adding__btn:active path {
+    fill: var(--white);
+}
+
+
+.user-adding__btn:focus .small-loader path,
+.user-adding__btn:active .small-loader path {
+    stroke: var(--white);
+    fill: transparent;
+}
