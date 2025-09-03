@@ -1,0 +1,389 @@
+button, hr, input {
+    overflow: visible
+}
+
+progress, sub, sup {
+    vertical-align: baseline
+}
+
+[type=checkbox], [type=radio], legend {
+    box-sizing: border-box;
+    padding: 0
+}
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+details, main {
+    display: block
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0
+}
+
+code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+a {
+    background-color: transparent
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted
+}
+
+b, strong {
+    font-weight: bolder
+}
+
+small {
+    font-size: 80%
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative
+}
+
+sub {
+    bottom: -.25em
+}
+
+sup {
+    top: -.5em
+}
+
+img {
+    border-style: none
+}
+
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0
+}
+
+button, select {
+    text-transform: none
+}
+
+[type=button], [type=reset], [type=submit], button {
+    -webkit-appearance: button
+}
+
+[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
+
+[type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring {
+    outline: ButtonText dotted 1px
+}
+
+fieldset {
+    padding: .35em .75em .625em
+}
+
+legend {
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    white-space: normal
+}
+
+textarea {
+    overflow: auto
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+summary {
+    display: list-item
+}
+
+[hidden], template {
+    display: none
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.page-body {
+    min-height: 100svh;
+    overflow: hidden;
+    background: #1a1a2e;
+}
+
+.container {
+    max-width: 1088px;
+    margin-inline: auto;
+    padding: 0 2rem;
+}
+
+.projects__container {
+    margin-inline: initial;
+    padding: 0;
+}
+
+.projects__content {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    z-index: 10;
+    max-width: clamp(320px, 50vw, 600px);
+    min-height: 100svh;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 0 0 40rem 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.projects__title {
+    margin: 0;
+    margin-bottom: 1.5rem;
+    font-size: clamp(2rem, 2vw, 3rem);
+    color: white;
+}
+
+.projects__list {
+    display: flex;
+    flex-flow: column;
+    gap: 1.225rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.projects__list-item {
+    position: relative;
+    padding-left: 1em;
+    font-size: 1.5rem;
+    color: white;
+    transition: color .3s ease-in;
+}
+
+.projects__list-item::before {
+    position: absolute;
+    content: "»";
+    left: 0;
+    color: currentColor;
+    transition: transform .2s ease-in;
+}
+
+@media (any-hover: hover) {
+    .projects__list-item:hover {
+        color: plum;
+    }
+
+    .projects__list-item:hover::before {
+        transform: translateX(.225rem);
+    }
+}
+
+.geometric-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.2;
+    transform-origin: center;
+}
+
+.square {
+    width: 40px;
+    height: 40px;
+    background: #f72585;
+    animation: rotate 20s infinite linear;
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #4cc9f0;
+    animation: pulse 15s infinite alternate;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid #7209b7;
+    animation: float 12s infinite ease-in-out;
+}
+
+.rectangle {
+    width: 80px;
+    height: 30px;
+    background: #4361ee;
+    animation: slide 18s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) translateX(20px) rotate(180deg);
+    }
+
+    100% {
+        transform: translateY(0px) translateX(0px) rotate(360deg);
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-100px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(100px) rotate(180deg);
+    }
+
+    100% {
+        transform: translateX(-100px) rotate(360deg);
+    }
+}
+
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    opacity: 0.5;
+    animation: sparkle 8s infinite linear;
+}
+
+@keyframes sparkle {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, #1a1a2e 80%);
+    z-index: 5;
+    animation: pulse-overlay 10s infinite alternate;
+}
+
+@keyframes pulse-overlay {
+    0% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
