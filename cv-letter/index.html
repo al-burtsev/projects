@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valeria | QA engineer</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+
     <script defer src="js/script.js"></script>
 </head>
 
-<body>
+<body class="page__body">
     <svg width="0" height="0" class="hidden">
         <symbol fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="linkedin">
             <path
@@ -56,26 +62,34 @@
             </path>
         </symbol>
     </svg>
-    <article>
-        <div class="container">
-            <div class="talk mb-20">
-                <img class="talk__ava" src="images/avatar.png" alt="">
-                <div class="talk__wrap">
-                    <p class="talk__text">Hi!</p>
-                    <p class="talk__text">My name is Valeria and I’m a QA engineer. It’s time to meet each other,
-                        right?</p>
+    <main>
+
+        <section class="section">
+            <div class="container">
+                <div class="talk mb-20">
+                    <img class="talk__ava" src="images/avatar.png" alt="">
+                    <div class="talk__wrap">
+                        <p class="talk__text">Hi!</p>
+                        <p class="talk__text">My name is Valeria and I’m a QA engineer. It’s time to meet each other,
+                            right?</p>
+                    </div>
+                </div>
+                <div class="notice">
+                    <h3 class="notice__mes">
+                        Every choice has consequences. Choose wisely.
+                    </h3>
+                </div>
+                <div class="choice mb-20">
+                    <button class="choice__btn btn-reset btn" id="start">Yes! I'd like to know more about you!</button>
+                    <button class="choice__btn btn-reset btn no-answer">Oh no. Can we talk later?
+                    </button>
                 </div>
             </div>
-            <div class="notice">
-                <h3 class="notice__mes">
-                    Every choice has consequences. Choose wisely.
-                </h3>
-            </div>
-            <div class="choice mb-20">
-                <button class="choice__btn btn-reset btn" id="start">Yes! I'd like to know more about you!</button>
-                <button class="choice__btn btn-reset btn sorry">Oh no. Can we talk later?
-                </button>
-            </div>
+        </section>
+
+        <div class="container">
+
+
             <div class="talk mb-20 hide" data-target="phrase-1">
                 <img class="talk__ava" src="images/avatar.png" alt="">
                 <p class="talk__text">Yay! Here, you can take a look at me. Yes, this photo. I am a very cheerful
@@ -118,7 +132,8 @@
             </div>
             <div class="example mb-20 hide" data-target="phrase-4">
                 <div class="example__photo" id="hide-2">
-                    <button class="example__btn btn-reset shine showNextImg">Click to get a better look. <br> Valeria shows
+                    <button class="example__btn btn-reset shine showNextImg">Click to get a better look. <br> Valeria
+                        shows
                         you
                         another photo.</button>
                     <button class="example__btn btn-reset showNextImg">
@@ -259,46 +274,46 @@
                         Yes<span aria-hidden>_</span>
                         <span aria-hidden class="decision__btn-glitch" id="accept">Yes_</span>
                     </button>
-                    <button class="decision__btn btn-reset decision__btn-mod sorry">
+                    <button class="decision__btn btn-reset decision__btn-mod no-answer">
                         No<span aria-hidden>_</span>
-                        <span aria-hidden class="decision__btn-glitch sorry">No_</span>
+                        <span aria-hidden class="decision__btn-glitch no-answer">No_</span>
                     </button>
                 </div>
             </div>
         </div>
-        <div class="modal" id="noModal">
-            <div class="modal__wrap">
-                <a class="modal__link" href="https://www.google.com/"><img class="modal__img" src="images/cry.webp"
-                        alt=""></a>
-                <a class="modal__link" href="https://www.google.com/">Bye</a>
-            </div>
+    </main>
+    <div class="modal" id="noModal">
+        <div class="modal__wrap">
+            <a class="modal__link" href="https://www.google.com/"><img class="modal__img" src="images/cry.webp"
+                    alt=""></a>
+            <a class="modal__link" href="https://www.google.com/">Bye</a>
         </div>
-        <div class="modal yes-modal" id="yesModal">
-            <h2 class="yes-modal__title">Contact me in any way:</h2>
-            <div class="yes-modal__wrap">
-                <a class="yes-modal__link" href=""><svg class="yes-modal__icon">
-                        <use xlink:href="#telegram"></use>
-                    </svg></a>
+    </div>
+    <div class="modal yes-modal" id="yesModal">
+        <h2 class="yes-modal__title">Contact me in any way:</h2>
+        <div class="yes-modal__wrap">
+            <a class="yes-modal__link" href=""><svg class="yes-modal__icon">
+                    <use xlink:href="#telegram"></use>
+                </svg></a>
 
-                <a class="yes-modal__link" href=""><svg class="yes-modal__icon">
-                        <use xlink:href="#linkedin"></use>
-                    </svg></a>
+            <a class="yes-modal__link" href=""><svg class="yes-modal__icon">
+                    <use xlink:href="#linkedin"></use>
+                </svg></a>
 
-                <a class="yes-modal__link" href=""><svg class="yes-modal__icon">
-                        <use xlink:href="#habr"></use>
-                    </svg></a>
+            <a class="yes-modal__link" href=""><svg class="yes-modal__icon">
+                    <use xlink:href="#habr"></use>
+                </svg></a>
 
-                <a class="yes-modal__link" href=""><svg class="yes-modal__icon">
-                        <use xlink:href="#gmail"></use>
-                    </svg></a>
+            <a class="yes-modal__link" href=""><svg class="yes-modal__icon">
+                    <use xlink:href="#gmail"></use>
+                </svg></a>
 
-                <a class="yes-modal__link" href=""><svg class="yes-modal__icon">
-                        <use xlink:href="#github"></use>
-                    </svg></a>
+            <a class="yes-modal__link" href=""><svg class="yes-modal__icon">
+                    <use xlink:href="#github"></use>
+                </svg></a>
 
-            </div>
         </div>
-    </article>
+    </div>
 </body>
 
 </html>

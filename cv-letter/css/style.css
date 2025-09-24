@@ -604,7 +604,7 @@ body {
     right: 0;
     left: 0;
     bottom: 0;
-    z-index: 999;
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -621,9 +621,10 @@ body {
 }
 
 .modal__link {
-    font-size: 30px;
+    font-size: 3.5rem;
     color: #333;
     text-decoration: none;
+    letter-spacing: 0.25em;
     cursor: pointer;
 }
 

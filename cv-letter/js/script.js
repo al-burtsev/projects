@@ -1,5 +1,7 @@
+gsap.registerPlugin(ScrollTrigger, SplitText)
+
 const start = document.getElementById('start');
-const sorry = document.querySelectorAll('.sorry');
+const noAnswers = document.querySelectorAll('.no-answer');
 const show = document.querySelectorAll('.showImg');
 const showNext = document.querySelectorAll('.showNextImg');
 const goFinish = document.querySelectorAll('.showLastImg');
@@ -69,12 +71,51 @@ goFinish.forEach((item) => {
     });
 });
 
-sorry.forEach((item) => {
-    item.addEventListener('click', () => {
-        noModal.classList.add('active');
-    })
-})
+noAnswers.forEach((answer) => {
+    answer.addEventListener('click', () => {
+        const section = answer.closest('section');
 
+        const farewellSplit = SplitText.create(".modal__link", { type: "words, chars" });
+
+        const farewellTl = gsap.timeline();
+
+        farewellTl
+            .to('.page__body', {
+                backgroundColor: 'black',
+                duration: 0.6,
+                ease: 'power4.out',
+            })
+            .to(section, {
+                opacity: 0,
+                duration: 0.6,
+                ease: 'power4.out',
+            }, '<')
+            .to(noModal, {
+                autoAlpha: 1,
+                duration: 1.5,
+                ease: 'sine.in'
+            }, '<-25%')
+            .fromTo(farewellSplit.chars, {
+                y: -100,
+                opacity: 0,
+                rotation: 45,
+                scale: 2,
+            }, {
+                y: 0,
+                rotation: "random(-100, 100)",
+                opacity: 1,
+                scale: 1,
+                duration: 0.6,
+                stagger: 0.25,
+                ease: 'power4.out',
+            })
+            .to('.modal__img', {
+                rotation: 10,
+                duration: 0.2,
+                ease: 'elastic.out(1.6, 1)'
+            }, '>-=0.25')
+    });
+});
 
 yes.addEventListener('click', () => {
     yesModal.classList.add('active');
