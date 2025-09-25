@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="css/style.css">
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script defer src="js/script.js"></script>
 </head>
 
@@ -62,12 +62,11 @@
             </path>
         </symbol>
     </svg>
-    <main>
-
-        <section class="section">
+    <main class="main">
+        <section class="section" id="start-section">
             <div class="container">
                 <div class="talk mb-20">
-                    <img class="talk__ava" src="images/avatar.png" alt="">
+                    <img class="talk__ava" src="images/avatar.png" alt="Valeria">
                     <div class="talk__wrap">
                         <p class="talk__text">Hi!</p>
                         <p class="talk__text">My name is Valeria and I’m a QA engineer. It’s time to meet each other,
@@ -76,242 +75,263 @@
                 </div>
                 <div class="notice">
                     <h3 class="notice__mes">
-                        Every choice has consequences. Choose wisely.
+                        <span class="gradient-text">Every choice has consequences. Choose wisely.</span>
                     </h3>
                 </div>
                 <div class="choice mb-20">
-                    <button class="choice__btn btn-reset btn" id="start">Yes! I'd like to know more about you!</button>
-                    <button class="choice__btn btn-reset btn no-answer">Oh no. Can we talk later?
+                    <button class="choice__btn btn-reset btn" id="start-chat">Yes! I'd like to know more about
+                        you!</button>
+                    <button class="choice__btn btn-reset btn cancel-btn">Oh no. Can we talk later?
                     </button>
                 </div>
             </div>
         </section>
 
-        <div class="container">
+        <section class="section chat">
+            <div class="container">
+                <div class="message">
+                    <div class="talk mb-20">
+                        <img class="talk__ava" src="images/avatar.png" alt="Valeria">
+                        <p class="talk__text">Yay! Here, you can take a look at me. Yes, this photo. I am a very
+                            cheerful
+                            person who appreciates teamwork!</p>
+                    </div>
+                    <div class="attachment mb-20">
+                        <div class="attachment__img">
+                            <button class="attachment__btn btn-reset shine">Valeria shows you a photo.</button>
+                            <button class="btn-reset ">
+                                <svg fill="" height="300px" width="300px" version="1.1" id="Capa_1"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    viewBox="0 0 58 58" xml:space="preserve">
 
-
-            <div class="talk mb-20 hide" data-target="phrase-1">
-                <img class="talk__ava" src="images/avatar.png" alt="">
-                <p class="talk__text">Yay! Here, you can take a look at me. Yes, this photo. I am a very cheerful
-                    person who appreciates teamwork!</p>
-            </div>
-            <div class="example mb-20 hide" data-target="phrase-2">
-
-                <div class="example__photo" id="hide-1">
-                    <button class="example__btn btn-reset shine showImg">Valeria shows you a photo.</button>
-                    <button class="btn-reset showImg">
-                        <svg fill="" height="300px" width="300px" version="1.1" id="Capa_1"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            viewBox="0 0 58 58" xml:space="preserve">
-
-                            <defs>
-                                <linearGradient id="linear-gradient" gradientTransform="rotate(90)">
-                                    <stop offset="0%" stop-color="#8674F8" />
-                                    <stop offset="50%" stop-color="#18256D" />
-                                    <stop offset="100%" stop-color="#D23C83" />
-                                </linearGradient>
-                            </defs>
-
-                            <g>
-                                <path fill="url(#linear-gradient)"
-                                    d="M57,6H1C0.448,6,0,6.447,0,7v44c0,0.553,0.448,1,1,1h56c0.552,0,1-0.447,1-1V7C58,6.447,57.552,6,57,6z M56,50H2V8h54V50z" />
-                                <path fill="url(#linear-gradient)"
-                                    d="M16,28.138c3.071,0,5.569-2.498,5.569-5.568C21.569,19.498,19.071,17,16,17s-5.569,2.498-5.569,5.569 C10.431,25.64,12.929,28.138,16,28.138z M16,19c1.968,0,3.569,1.602,3.569,3.569S17.968,26.138,16,26.138s-3.569-1.601-3.569-3.568 S14.032,19,16,19z" />
-                                <path fill="url(#linear-gradient)"
-                                    d="M7,46c0.234,0,0.47-0.082,0.66-0.249l16.313-14.362l10.302,10.301c0.391,0.391,1.023,0.391,1.414,0s0.391-1.023,0-1.414 l-4.807-4.807l9.181-10.054l11.261,10.323c0.407,0.373,1.04,0.345,1.413-0.062c0.373-0.407,0.346-1.04-0.062-1.413l-12-11 c-0.196-0.179-0.457-0.268-0.72-0.262c-0.265,0.012-0.515,0.129-0.694,0.325l-9.794,10.727l-4.743-4.743 c-0.374-0.373-0.972-0.392-1.368-0.044L6.339,44.249c-0.415,0.365-0.455,0.997-0.09,1.412C6.447,45.886,6.723,46,7,46z" />
-                            </g>
-                        </svg>
-                    </button>
+                                    <g>
+                                        <path fill=""
+                                            d="M57,6H1C0.448,6,0,6.447,0,7v44c0,0.553,0.448,1,1,1h56c0.552,0,1-0.447,1-1V7C58,6.447,57.552,6,57,6z M56,50H2V8h54V50z" />
+                                        <path fill=""
+                                            d="M16,28.138c3.071,0,5.569-2.498,5.569-5.568C21.569,19.498,19.071,17,16,17s-5.569,2.498-5.569,5.569 C10.431,25.64,12.929,28.138,16,28.138z M16,19c1.968,0,3.569,1.602,3.569,3.569S17.968,26.138,16,26.138s-3.569-1.601-3.569-3.568 S14.032,19,16,19z" />
+                                        <path fill=""
+                                            d="M7,46c0.234,0,0.47-0.082,0.66-0.249l16.313-14.362l10.302,10.301c0.391,0.391,1.023,0.391,1.414,0s0.391-1.023,0-1.414 l-4.807-4.807l9.181-10.054l11.261,10.323c0.407,0.373,1.04,0.345,1.413-0.062c0.373-0.407,0.346-1.04-0.062-1.413l-12-11 c-0.196-0.179-0.457-0.268-0.72-0.262c-0.265,0.012-0.515,0.129-0.694,0.325l-9.794,10.727l-4.743-4.743 c-0.374-0.373-0.972-0.392-1.368-0.044L6.339,44.249c-0.415,0.365-0.455,0.997-0.09,1.412C6.447,45.886,6.723,46,7,46z" />
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                        <img class="attachment__photo none" src="images/img1.png" alt="team">
+                    </div>
                 </div>
-                <img class="example__img none" src="images/img1.png" alt="" id="imgFirst">
-            </div>
-            <div class="talk mb-20 hide" data-target="phrase-3">
-                <img class="talk__ava" src="images/avatar.png" alt="">
-                <p class="talk__text">Oops... Sorry, wrong photo. It was the last working day before the New
-                    Year. We took so many photos back then..!</p>
-            </div>
-            <div class="example mb-20 hide" data-target="phrase-4">
-                <div class="example__photo" id="hide-2">
-                    <button class="example__btn btn-reset shine showNextImg">Click to get a better look. <br> Valeria
-                        shows
-                        you
-                        another photo.</button>
-                    <button class="example__btn btn-reset showNextImg">
-                        <svg fill="" height="300px" width="300px" version="1.1" id="Capa_1"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            viewBox="0 0 58 58" xml:space="preserve">
 
-                            <defs>
-                                <linearGradient id="linear-gradient" gradientTransform="rotate(90)">
-                                    <stop offset="0%" stop-color="#8674F8" />
-                                    <stop offset="50%" stop-color="#18256D" />
-                                    <stop offset="100%" stop-color="#D23C83" />
-                                </linearGradient>
-                            </defs>
+                <div class="message">
+                    <div class="talk mb-20">
+                        <img class="talk__ava" src="images/avatar.png" alt="Valeria">
+                        <p class="talk__text">Oops... Sorry, wrong photo. It was the last working day before the New
+                            Year. We took so many photos back then..!</p>
+                    </div>
+                    <div class="attachment mb-20">
+                        <div class="attachment__img">
+                            <button class="attachment__btn btn-reset shine">Click to get a better look. <br>
+                                Valeria
+                                shows
+                                you
+                                another photo.</button>
+                            <button class="attachment__btn btn-reset">
+                                <svg fill="" height="300px" width="300px" version="1.1" id="Capa_1"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    viewBox="0 0 58 58" xml:space="preserve">
 
-                            <g>
-                                <path fill="url(#linear-gradient)"
-                                    d="M57,6H1C0.448,6,0,6.447,0,7v44c0,0.553,0.448,1,1,1h56c0.552,0,1-0.447,1-1V7C58,6.447,57.552,6,57,6z M56,50H2V8h54V50z" />
-                                <path fill="url(#linear-gradient)"
-                                    d="M16,28.138c3.071,0,5.569-2.498,5.569-5.568C21.569,19.498,19.071,17,16,17s-5.569,2.498-5.569,5.569 C10.431,25.64,12.929,28.138,16,28.138z M16,19c1.968,0,3.569,1.602,3.569,3.569S17.968,26.138,16,26.138s-3.569-1.601-3.569-3.568 S14.032,19,16,19z" />
-                                <path fill="url(#linear-gradient)"
-                                    d="M7,46c0.234,0,0.47-0.082,0.66-0.249l16.313-14.362l10.302,10.301c0.391,0.391,1.023,0.391,1.414,0s0.391-1.023,0-1.414 l-4.807-4.807l9.181-10.054l11.261,10.323c0.407,0.373,1.04,0.345,1.413-0.062c0.373-0.407,0.346-1.04-0.062-1.413l-12-11 c-0.196-0.179-0.457-0.268-0.72-0.262c-0.265,0.012-0.515,0.129-0.694,0.325l-9.794,10.727l-4.743-4.743 c-0.374-0.373-0.972-0.392-1.368-0.044L6.339,44.249c-0.415,0.365-0.455,0.997-0.09,1.412C6.447,45.886,6.723,46,7,46z" />
-                            </g>
-                        </svg>
-                    </button>
+                                    <g>
+                                        <path fill=""
+                                            d="M57,6H1C0.448,6,0,6.447,0,7v44c0,0.553,0.448,1,1,1h56c0.552,0,1-0.447,1-1V7C58,6.447,57.552,6,57,6z M56,50H2V8h54V50z" />
+                                        <path fill=""
+                                            d="M16,28.138c3.071,0,5.569-2.498,5.569-5.568C21.569,19.498,19.071,17,16,17s-5.569,2.498-5.569,5.569 C10.431,25.64,12.929,28.138,16,28.138z M16,19c1.968,0,3.569,1.602,3.569,3.569S17.968,26.138,16,26.138s-3.569-1.601-3.569-3.568 S14.032,19,16,19z" />
+                                        <path fill=""
+                                            d="M7,46c0.234,0,0.47-0.082,0.66-0.249l16.313-14.362l10.302,10.301c0.391,0.391,1.023,0.391,1.414,0s0.391-1.023,0-1.414 l-4.807-4.807l9.181-10.054l11.261,10.323c0.407,0.373,1.04,0.345,1.413-0.062c0.373-0.407,0.346-1.04-0.062-1.413l-12-11 c-0.196-0.179-0.457-0.268-0.72-0.262c-0.265,0.012-0.515,0.129-0.694,0.325l-9.794,10.727l-4.743-4.743 c-0.374-0.373-0.972-0.392-1.368-0.044L6.339,44.249c-0.415,0.365-0.455,0.997-0.09,1.412C6.447,45.886,6.723,46,7,46z" />
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                        <img class="attachment__photo none" src="images/img2.png" alt="team" id="imgSecond">
+                    </div>
                 </div>
-                <img class="example__img none" src="images/img2.png" alt="" id="imgSecond">
-            </div>
-            <div class="talk mb-20 hide" data-target="phrase-5">
-                <img class="talk__ava" src="images/avatar.png" alt="">
-                <p class="talk__text">Here you go! Now everything is correct. But all I said above was true. I am an
-                    easy-going, open-minded person inspired by team-work and creative like-minded people. Would I share
-                    the last slice of pizza? Of course! Tasks will be
-                    closed more productively if we work on a full stomach. Would I share my
-                    insights on how to improve our work? Three times yes!</p>
-            </div>
-            <div class="talk mb-20 hide" data-target="phrase-6">
-                <img class="talk__ava" src="images/avatar.png" alt="">
-                <p class="talk__text">Moreover, I'm always to improve my skills and I'm more than willing to soak
-                    up any new information related to QA and beyond. M-mh... Can I brag a little?
-                    Probably every QA engineer wants to hear words of gratitude from the
-                    developer. I have such an achievement.</p>
-            </div>
-            <div class="example mb-20 hide" data-target="phrase-7">
-                <div class="example__photo" id="hide-3">
-                    <button class="example__btn btn-reset shine showLastImg" id="last">Yes. Still click.</button>
-                    <button class="example__btn btn-reset showLastImg">
-                        <svg fill="" height="300px" width="300px" version="1.1" id="Capa_1"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            viewBox="0 0 58 58" xml:space="preserve">
 
-                            <defs>
-                                <linearGradient id="linear-gradient" gradientTransform="rotate(90)">
-                                    <stop offset="0%" stop-color="#8674F8" />
-                                    <stop offset="50%" stop-color="#18256D" />
-                                    <stop offset="100%" stop-color="#D23C83" />
-                                </linearGradient>
-                            </defs>
-
-                            <g>
-                                <path fill="url(#linear-gradient)"
-                                    d="M57,6H1C0.448,6,0,6.447,0,7v44c0,0.553,0.448,1,1,1h56c0.552,0,1-0.447,1-1V7C58,6.447,57.552,6,57,6z M56,50H2V8h54V50z" />
-                                <path fill="url(#linear-gradient)"
-                                    d="M16,28.138c3.071,0,5.569-2.498,5.569-5.568C21.569,19.498,19.071,17,16,17s-5.569,2.498-5.569,5.569 C10.431,25.64,12.929,28.138,16,28.138z M16,19c1.968,0,3.569,1.602,3.569,3.569S17.968,26.138,16,26.138s-3.569-1.601-3.569-3.568 S14.032,19,16,19z" />
-                                <path fill="url(#linear-gradient)"
-                                    d="M7,46c0.234,0,0.47-0.082,0.66-0.249l16.313-14.362l10.302,10.301c0.391,0.391,1.023,0.391,1.414,0s0.391-1.023,0-1.414 l-4.807-4.807l9.181-10.054l11.261,10.323c0.407,0.373,1.04,0.345,1.413-0.062c0.373-0.407,0.346-1.04-0.062-1.413l-12-11 c-0.196-0.179-0.457-0.268-0.72-0.262c-0.265,0.012-0.515,0.129-0.694,0.325l-9.794,10.727l-4.743-4.743 c-0.374-0.373-0.972-0.392-1.368-0.044L6.339,44.249c-0.415,0.365-0.455,0.997-0.09,1.412C6.447,45.886,6.723,46,7,46z" />
-                            </g>
-                        </svg>
-                    </button>
+                <div class="message">
+                    <div class="talk mb-20">
+                        <img class="talk__ava" src="images/avatar.png" alt="Valeria">
+                        <p class="talk__text">Here you go! Now everything is correct. But all I said above was true. I
+                            am an
+                            easy-going, open-minded person inspired by team-work and creative like-minded people. Would
+                            I share
+                            the last slice of pizza? Of course! Tasks will be
+                            closed more productively if we work on a full stomach. Would I share my
+                            insights on how to improve our work? Three times yes!</p>
+                    </div>
                 </div>
-                <figure class="example__figure hide" id="figure">
-                    <img src="images/img3.png" alt="">
-                    <figcaption class="example__caption">
-                        <p class="example__text">Translation:
+
+                <div class="message">
+                    <div class="talk mb-20">
+                        <img class="talk__ava" src="images/avatar.png" alt="Valeria">
+                        <p class="talk__text">Moreover, I'm always to improve my skills and I'm more than willing to
+                            soak
+                            up any new information related to QA and beyond. M-mh... Can I brag a little?
+                            Probably every QA engineer wants to hear words of gratitude from the
+                            developer. I have such an achievement.</p>
+                    </div>
+                    <div class="attachment mb-20">
+                        <div class="attachment__img">
+                            <button class="attachment__btn btn-reset shine" id="last">Yes. Still
+                                click.</button>
+                            <button class="attachment__btn btn-reset">
+                                <svg fill="" height="300px" width="300px" version="1.1" id="Capa_1"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    viewBox="0 0 58 58" xml:space="preserve">
+
+                                    <g>
+                                        <path fill=""
+                                            d="M57,6H1C0.448,6,0,6.447,0,7v44c0,0.553,0.448,1,1,1h56c0.552,0,1-0.447,1-1V7C58,6.447,57.552,6,57,6z M56,50H2V8h54V50z" />
+                                        <path fill=""
+                                            d="M16,28.138c3.071,0,5.569-2.498,5.569-5.568C21.569,19.498,19.071,17,16,17s-5.569,2.498-5.569,5.569 C10.431,25.64,12.929,28.138,16,28.138z M16,19c1.968,0,3.569,1.602,3.569,3.569S17.968,26.138,16,26.138s-3.569-1.601-3.569-3.568 S14.032,19,16,19z" />
+                                        <path fill=""
+                                            d="M7,46c0.234,0,0.47-0.082,0.66-0.249l16.313-14.362l10.302,10.301c0.391,0.391,1.023,0.391,1.414,0s0.391-1.023,0-1.414 l-4.807-4.807l9.181-10.054l11.261,10.323c0.407,0.373,1.04,0.345,1.413-0.062c0.373-0.407,0.346-1.04-0.062-1.413l-12-11 c-0.196-0.179-0.457-0.268-0.72-0.262c-0.265,0.012-0.515,0.129-0.694,0.325l-9.794,10.727l-4.743-4.743 c-0.374-0.373-0.972-0.392-1.368-0.044L6.339,44.249c-0.415,0.365-0.455,0.997-0.09,1.412C6.447,45.886,6.723,46,7,46z" />
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                        <figure class="attachment__figure none" id="figure">
+                            <img src="images/img3.png" alt="">
+                            <figcaption class="attachment__caption">
+                                <p class="attachment__text">Translation:
+                                </p>
+                                <p class="attachment__text"> - It seems that the most pleasant thing for QA is when the
+                                    markup
+                                    developer says thank you
+                                    for the bugs
+                                </p>
+                                <p class="attachment__text"> - Thank you for reporting the cropped placeholders in the
+                                    forms, this
+                                    helped me find a plug
+                                    in
+                                    the submission</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="message">
+                    <div class="talk mb-20">
+                        <img class="talk__ava" src="images/avatar.png" alt="Valeria">
+                        <p class="talk__text">It's great, isn't it? I remember when we first started working together
+                            and he
+                            snorted so funny when I talked about bugs in placeholders... I'm sorry. Nostalgia
+                            got into the eye. Okay, well, let's turn to me</p>
+                    </div>
+                </div>
+
+                <div class="message">
+                    <div class="talk mb-20">
+                        <img class="talk__ava" src="images/avatar.png" alt="Valeria">
+                        <p class="talk__text">I can spend hours exploring every corner of the map in my favorite games.
+                            In
+                            the
+                            same way I plunge into my work tasks and thoroughly solve any questions. Oh no,
+                            we have fifty pages of disparate documentation, and our checklist has turned into
+                            an ugly Frankenstein monster? Leave it to me. An intern is terribly nervous and
+                            doesn’t know how to start? This is my mission. I will be able to make everything
+                            simple and understandable quickly. P.S. These guys are still working with us!</p>
+                    </div>
+                </div>
+
+                <div class="message">
+                    <div class="talk mb-20">
+                        <img class="talk__ava" src="images/avatar.png" alt="Valeria">
+                        <p class="talk__text">I have no illusions that working in the game industry is a holiday and the
+                            absence of routine. I love energetic, busy working days full of meetups and
+                            problem-solving presentations. And at the same time I also prefer quiet routine
+                            days both. Probably because I just love what I do.
                         </p>
-                        <p class="example__text"> - It seems that the most pleasant thing for QA is when the markup
-                            developer says thank you
-                            for the bugs
-                        </p>
-                        <p class="example__text"> - Thank you for reporting the cropped placeholders in the forms, this
-                            helped me find a plug
-                            in
-                            the submission</p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="talk mb-20 hide" data-target="phrase-8">
-                <img class="talk__ava" src="images/avatar.png" alt="">
-                <p class="talk__text">It's great, isn't it? I remember when we first started working together and he
-                    snorted so funny when I talked about bugs in placeholders... I'm sorry. Nostalgia
-                    got into the eye. Okay, well, let's turn to me</p>
-            </div>
-            <div class="talk mb-20 hide" data-target="phrase-8">
-                <img class="talk__ava" src="images/avatar.png" alt="">
-                <p class="talk__text">I can spend hours exploring every corner of the map in my favorite games. In the
-                    same way I plunge into my work tasks and thoroughly solve any questions. Oh no,
-                    we have fifty pages of disparate documentation, and our checklist has turned into
-                    an ugly Frankenstein monster? Leave it to me. An intern is terribly nervous and
-                    doesn’t know how to start? This is my mission. I will be able to make everything
-                    simple and understandable quickly. P.S. These guys are still working with us!</p>
-            </div>
-            <div class="talk mb-20 hide" data-target="phrase-9">
-                <img class="talk__ava" src="images/avatar.png" alt="">
-                <p class="talk__text">I have no illusions that working in the game industry is a holiday and the
-                    absence of routine. I love energetic, busy working days full of meetups and
-                    problem-solving presentations. And at the same time I also prefer quiet routine
-                    days both. Probably because I just love what I do.
-                </p>
-            </div>
-            <div class="talk mb-20 hide" data-target="phrase-10">
-                <img class="talk__ava" src="images/avatar.png" alt="">
-                <p class="talk__text">I haven't had any experience in game development yet, but this is what I studied
-                    for. I really want to be that <s>Grey Warden</s>... <s>Assassin</s>... QA engineer who will
-                    save <s>the world</s>... the game from <s>darkspawns</s>...
-                    <s>Templars</s>... bugs. Therefore,
-                    I would be
-                    glad to join your team and become a part of it, which you can rely on with
-                    confidence.
-                </p>
-            </div>
-            <div class="talk mb-20 hide" data-target="phrase-11">
-                <img class="talk__ava" src="images/avatar.png" alt="">
-                <p class="talk__text">So... I think I'm gonna head out. Oh, no, no, no. I should go. *imitates
-                    Commander Shepard's voice and giggles* . I will attach my resume as a
-                    separate file. Thanks for your attention!
-                </p>
-            </div>
-            <div class="example mb-20 example_no-after example_end hide" data-target="phrase-12">
-                <p class="example__text-lg text">Valeria leaves.</p>
-                <p class="example__text-lg text">But there seems to be a question in the
-                    air.</p>
+                    </div>
+                </div>
 
+                <div class="message">
+                    <div class="talk mb-20">
+                        <img class="talk__ava" src="images/avatar.png" alt="Valeria">
+                        <p class="talk__text">I haven't had any experience in game development yet, but this is what I
+                            studied
+                            for. I really want to be that <s>Grey Warden</s>... <s>Assassin</s>... QA engineer who will
+                            save <s>the world</s>... the game from <s>darkspawns</s>...
+                            <s>Templars</s>... bugs. Therefore,
+                            I would be
+                            glad to join your team and become a part of it, which you can rely on with
+                            confidence.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="message" id="last-mess">
+                    <div class="talk mb-20">
+                        <img class="talk__ava" src="images/avatar.png" alt="Valeria">
+                        <p class="talk__text">So... I think I'm gonna head out. Oh, no, no, no. I should go. *imitates
+                            Commander Shepard's voice and giggles*. I will attach my resume as a
+                            separate file. Thanks for your attention!
+                        </p>
+                    </div>
+                    <div class="attachment mb-20 attachment_no-after attachment_end">
+                        <p class="attachment__text-lg text">Valeria leaves.</p>
+                        <p class="attachment__text-lg text">But there seems to be a question in the
+                            air.</p>
+                    </div>
+                </div>
             </div>
-            <div class="decision hide" data-target="phrase-13">
+        </section>
+        <section class="section decision">
+            <div class="container">
                 <h3 class="decision__title">"Will we meet again?"</h3>
-                <div class="dicision__wrap">
-                    <button class="decision__btn btn-reset">
+                <div class="dicision__btn-wrap">
+                    <button class="decision__btn btn-reset" id="acceptBtn">
                         Yes<span aria-hidden>_</span>
-                        <span aria-hidden class="decision__btn-glitch" id="accept">Yes_</span>
+                        <span aria-hidden class="decision__btn-glitch">Yes_</span>
                     </button>
-                    <button class="decision__btn btn-reset decision__btn-mod no-answer">
+                    <button class="decision__btn btn-reset decision__btn-mod cancel-btn">
                         No<span aria-hidden>_</span>
-                        <span aria-hidden class="decision__btn-glitch no-answer">No_</span>
+                        <span aria-hidden class="decision__btn-glitch ">No_</span>
                     </button>
                 </div>
             </div>
+        </section>
+        <div class="arrow-down">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z" />
+                <path d="M13 13.586V8h-2v5.586l-2.293-2.293-1.414 1.414L12 17.414l4.707-4.707-1.414-1.414L13 13.586z" />
+            </svg>
         </div>
     </main>
-    <div class="modal" id="noModal">
+
+    <div class="modal" id="cancelModal">
         <div class="modal__wrap">
             <a class="modal__link" href="https://www.google.com/"><img class="modal__img" src="images/cry.webp"
                     alt=""></a>
             <a class="modal__link" href="https://www.google.com/">Bye</a>
         </div>
     </div>
-    <div class="modal yes-modal" id="yesModal">
-        <h2 class="yes-modal__title">Contact me in any way:</h2>
-        <div class="yes-modal__wrap">
-            <a class="yes-modal__link" href=""><svg class="yes-modal__icon">
+    <div class="modal acceptModal" id="acceptModal">
+        <h2 class="acceptModal__title">Contact me in any way:</h2>
+        <div class="acceptModal__wrap">
+            <a class="acceptModal__link" href="/"><svg class="acceptModal__icon">
                     <use xlink:href="#telegram"></use>
                 </svg></a>
 
-            <a class="yes-modal__link" href=""><svg class="yes-modal__icon">
+            <a class="acceptModal__link" href="/"><svg class="acceptModal__icon">
                     <use xlink:href="#linkedin"></use>
                 </svg></a>
 
-            <a class="yes-modal__link" href=""><svg class="yes-modal__icon">
+            <a class="acceptModal__link" href="/"><svg class="acceptModal__icon">
                     <use xlink:href="#habr"></use>
                 </svg></a>
 
-            <a class="yes-modal__link" href=""><svg class="yes-modal__icon">
+            <a class="acceptModal__link" href="/"><svg class="acceptModal__icon">
                     <use xlink:href="#gmail"></use>
                 </svg></a>
 
-            <a class="yes-modal__link" href=""><svg class="yes-modal__icon">
+            <a class="acceptModal__link" href="/"><svg class="acceptModal__icon">
                     <use xlink:href="#github"></use>
                 </svg></a>
-
         </div>
     </div>
 </body>
