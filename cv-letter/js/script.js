@@ -117,22 +117,18 @@ attachImges.forEach((elem) => {
         const picture = e.target.closest('.attachment__img');
         const photo = picture.nextElementSibling;
 
-        const picTl = gsap.timeline();
+        const picTl = gsap.timeline({ duration: 1, ease: "power4.out" });
 
         picTl
             .to(picture, {
                 opacity: 0,
                 duration: 1.2,
-                ease: 'power4.out',
-                onComplete: () => {
-                    gsap.set(picture, { height: 0, })
-                    gsap.set(photo, { display: 'flex', opacity: 0, })
-                }
             })
+            .set(picture, { height: 0, })
+            .set(photo, { display: 'flex', opacity: 0, })
             .to(photo, {
                 autoAlpha: 1,
                 duration: 0.6,
-                ease: 'power4.out',
             })
     });
 });
